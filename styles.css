@@ -1,0 +1,417 @@
+/* RESET GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: radial-gradient(circle at top, #0a0015 0%, #1a0033 50%, #000000 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+}
+
+/* NAVBAR */
+
+.navbar {
+    background: linear-gradient(135deg, #1a0033, #330066, #0d1b2a);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 0 20px #ff00ff80, 0 0 40px #00ff4180;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(90deg, #ff00ff, #00ff41, #ffff00, #ff00ff) 1;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 900;
+    background: linear-gradient(45deg, #ff00ff, #00ff41, #ffff00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 15px #ff00ff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: -4px;
+    background: linear-gradient(90deg, #ff00ff, #00ff41);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00ff41;
+    text-shadow: 0 0 10px #00ff41;
+}
+
+.nav-links a:hover::after,
+.nav-links a.activo::after {
+    width: 100%;
+}
+
+/* SECCIONES */
+section {
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: auto;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+    background: linear-gradient(45deg, #ff00ff, #00ff41, #ffff00, #ff6600);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    text-align: center;
+    text-shadow: 0 0 20px #ff00ff;
+}
+
+/* BANNER INDEX */
+.banner {
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 30px #ff00ff60, 0 0 60px #00ff4140;
+    margin-bottom: 3rem;
+    border: 2px solid;
+    border-image: linear-gradient(45deg, #ff00ff, #00ff41, #ffff00) 1;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* JUEGOS DESTACADOS INDEX */
+.destacados-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.destacado {
+    background: linear-gradient(145deg, #1a0033, #330066, #0d1b2a);
+    border: 2px solid;
+    border-image: linear-gradient(45deg, #ff00ff, #00ff41) 1;
+    border-radius: 20px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 15px #ff00ff30, 0 0 30px #00ff4120;
+}
+
+.destacado:hover {
+    transform: scale(1.08) rotateY(5deg);
+    box-shadow: 0 0 40px #ff00ff80, 0 0 60px #00ff4160;
+    border-image: linear-gradient(45deg, #ffff00, #ff6600, #ff00ff) 1;
+}
+
+.destacado img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    border: 1px solid #ff00ff50;
+}
+
+.destacado h3 {
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+    text-shadow: 0 0 5px #00ff41;
+}
+
+.destacado p {
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff00ff, #00ff41);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 1.1rem;
+}
+
+.destacado button {
+    background: linear-gradient(45deg, #ff00ff, #ff6600, #ffff00);
+    color: #000000;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.8rem;
+    box-shadow: 0 0 15px #ff00ff50;
+    text-transform: uppercase;
+}
+
+.destacado button:hover {
+    background: linear-gradient(45deg, #00ff41, #ffff00, #ff00ff);
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px #00ff41;
+}
+
+/* CATALOGO */
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #1a0033, #330066);
+    border: 2px solid;
+    border-image: linear-gradient(90deg, #ff00ff, #00ff41, #ffff00) 1;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 25px #ff00ff40, 0 0 50px #00ff4120;
+}
+
+.filtros input,
+.filtros select {
+    padding: 0.8rem;
+    border-radius: 10px;
+    border: 2px solid #ff00ff;
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+    color: #ffffff;
+    width: 100%;
+    max-width: 300px;
+    transition: all 0.3s ease;
+}
+
+.filtros input:focus,
+.filtros select:focus {
+    border-color: #00ff41;
+    box-shadow: 0 0 15px #00ff41;
+    outline: none;
+}
+
+.juegos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.juego {
+    background: linear-gradient(145deg, #1a0033, #330066, #0d1b2a);
+    border: 2px solid;
+    border-image: linear-gradient(45deg, #ff00ff, #00ff41) 1;
+    border-radius: 20px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 15px #ff00ff30, 0 0 30px #00ff4120;
+}
+
+.juego:hover {
+    transform: scale(1.08) rotateY(5deg);
+    box-shadow: 0 0 40px #ff00ff80, 0 0 60px #00ff4160;
+    border-image: linear-gradient(45deg, #ffff00, #ff6600, #ff00ff) 1;
+}
+
+.juego img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    border: 1px solid #ff00ff50;
+}
+
+.juego h3 {
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+    text-shadow: 0 0 5px #00ff41;
+}
+
+.juego p {
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff00ff, #00ff41);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 1.1rem;
+}
+
+.juego button {
+    background: linear-gradient(45deg, #ff00ff, #ff6600, #ffff00);
+    color: #000000;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.8rem;
+    box-shadow: 0 0 15px #ff00ff50;
+    text-transform: uppercase;
+}
+
+.juego button:hover {
+    background: linear-gradient(45deg, #00ff41, #ffff00, #ff00ff);
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px #00ff41;
+}
+
+/* FORMULARIOS */
+.formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: linear-gradient(145deg, #1a0033, #330066);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 0 30px #ff00ff50, 0 0 60px #00ff4130;
+    border: 2px solid;
+    /*border-image: linear-gradient(45deg, #ff00ff, #00ff41, #ffff00) 1;*/
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+    padding: 1rem;
+    border: 2px solid #ff00ff60;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.formulario-contacto input:focus,
+.formulario-contacto textarea:focus {
+    border-color: #00ff41;
+    box-shadow: 0 0 15px #00ff41;
+    outline: none;
+}
+
+.formulario-contacto button {
+    background: linear-gradient(45deg, #ff00ff, #ff6600, #ffff00);
+    color: #000000;
+    padding: 1rem;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    box-shadow: 0 0 20px #ff00ff50;
+}
+
+.formulario-contacto button:hover {
+    background: linear-gradient(45deg, #00ff41, #ffff00, #ff00ff);
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px #00ff41;
+}
+
+/* REDES SOCIALES */
+.redes, .redes-contacto .redes {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.redes a {
+    background: linear-gradient(45deg, #ff00ff, #00ff41);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.redes a:hover {
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ff41;
+    transform: scale(1.2);
+}
+
+/* FOOTER */
+footer {
+    background: linear-gradient(135deg, #0d0d0d, #1a0033);
+    padding: 2rem;
+    text-align: center;
+    color: #cccccc;
+    margin-top: auto;
+    border-top: 3px solid;
+    border-image: linear-gradient(90deg, #ff00ff, #00ff41, #ffff00) 1;
+    box-shadow: 0 -5px 20px #ff00ff20, 0 -10px 40px #00ff4110;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, #ff00ff, #00ff41);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    cursor: pointer;
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: linear-gradient(135deg, #1a0033, #330066);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 1rem 0;
+        border-top: 3px solid;
+        border-image: linear-gradient(90deg, #ff00ff, #00ff41, #ffff00) 1;
+        z-index: 999;
+        box-shadow: 0 10px 30px #ff00ff30;
+    }
+    
+    .nav-links.activo {
+        display: flex;
+    }
+    
+    .nav-links li {
+        margin: 0.8rem 0;
+        text-align: center;
+    }
+}
